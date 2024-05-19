@@ -1,77 +1,38 @@
-#include<iostream> 
-#include<cstring>
-
-using namespace std;
-
-
+#include<iostream>
 
 #include "CRectangle.h"
-/*
-void ProcessRectangle(Rectangle r) {
-	
-	float temp = r.width; 
-	
-	r.width = r.height; 
-	r.height = temp;
-	
-}
-*/
-
-void ProcessRectangle(Rectangle &r) {
-	
-	char msg1[1000];
-	int size = strlen("scherzone");
-	memcpy(msg1,"scherzone",size); 
-	msg1[size]='\0';
-	
-	cout << endl;
-	cout << "######## Process ###########" << endl;
-	
-	float w = r.GetWidth(); 
-	float h = r.GetHeight();	
-		
-	r.SetWidth(h); 
-	r.SetHeight(w);
-	
-
-	r.SetText(msg1);
-	
-	
-	r.Dump(); 
-	cout << "######### ######### ##########" << endl;
-}
-
-
 
 int main() {
 
+	
 	Rectangle rectA(10,5);
 	Rectangle rectB(3,7);
-	
-	char msg1[1000];
-	int size = strlen("prova");
-	memcpy(msg1,"prova",size); 
-	msg1[size]='\0';
-
-	rectA.SetText(msg1);
-		
-	cout << endl;
-	cout << "****** rectangle A dump ******" << endl;
-	rectA.Dump(); 
-	cout << "****** ********* ******" << endl;
-	cout << "****** rectangle B dump ******" << endl;
-	rectB.Dump(); 
-	cout << "****** ********* ******" << endl;
-	
-	
-
-	
-	ProcessRectangle(rectA); 
+	Rectangle rectC = rectB;
 	
 	cout << endl;
-	cout << "****** rectangle A dump ******" << endl;
+	cout << "rectangle A" << endl;
 	rectA.Dump();
-	cout << "****** ********* ******" << endl;
+
+	cout << endl;	
+	cout << "rectangle B" << endl;
+	rectB.Dump();
+	
+	rectA = rectB; 
+	
+	cout << endl;
+	cout << "rectangle A" << endl;
+	rectA.Dump(); 
+	cout << endl;
+	cout << "rectangle B" << endl;
+	rectB.Dump(); 
+	
+	rectC.SetDim(13,9);
+	
+	if (rectA == rectC) 
+		cout<< "A e C sono uguali" << endl;
+	else 
+		cout<< "A e C sono diversi" << endl;
+		
 	
 	return 0;
 

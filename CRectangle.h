@@ -8,18 +8,18 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
+#include<iostream>
 
 
+using namespace std;
 
 /// @class Rectangle
 /// @brief to manage an object with the shape of a rectangle
 class Rectangle 
 {
-private:
+protected:
 	float height;
 	float width;
-	
-	char* text;
 	
 
 public:
@@ -33,6 +33,11 @@ public:
 	~Rectangle();
 	/// @}
 	
+	/// @name OPERATORS
+	/// @{
+	Rectangle& operator=(const Rectangle &r); 
+	bool operator==(const Rectangle &r);
+	/// @}
 	
 	/// @name BASIC HANDLING
 	/// @{
@@ -47,16 +52,12 @@ public:
 	void SetHeight(float h);
 	void SetWidth(float w);
 	void SetDim(float w, float h); 
-	
-	void SetText(const char* string);
 		
 	void GetDim(float &w, float &h);
 	float GetHeight();
 	float GetWidth(); 
 	float GetPerimeter(); 
 	float GetArea();
-	
-	void GetText(char* string);
 	/// @}
 	
 	

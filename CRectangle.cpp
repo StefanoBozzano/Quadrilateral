@@ -4,10 +4,8 @@
 ///	Details.
 ///
 
-#include<iostream> 
-#include <cstring>
-#include "CRectangle.h" 
-using namespace std;
+#include<iostream>
+#include "CRectangle.h"
 
 /// @brief default constructor 
 Rectangle::Rectangle() {
@@ -44,7 +42,6 @@ Rectangle::~Rectangle() {
 
 }
 
-
 /// @brief copy constructor 
 /// @param o reference to the object that should be copied 
 Rectangle::Rectangle(const Rectangle &r) { 
@@ -55,35 +52,47 @@ Rectangle::Rectangle(const Rectangle &r) {
 	
 }
 
+/// @brief overload of operator = 
+/// @param o reference to the object on the right side of the operator 
+/// @return reference to the object on the left side of the operator 
+Rectangle& Rectangle::operator=(const Rectangle &r) { 
+
+	cout << "Rectangle - operator =" << endl;
+
+	Init(r);
+	
+	return *this;
+	
+}
+
+/// @brief overload of operator == 
+/// @param r reference to the object on the right side of the operator 
+/// @return true if the two objects have the same width and the same length  
+bool Rectangle::operator==(const Rectangle &r) { 
+
+	if (r.width == width && r.height == height)
+		return true;
+		
+	return false;
+}
 
 /// @brief default initialization of the object
 void Rectangle::Init() {
-
-	text = new char [1000]; 
-	if (text == NULL) {
-		ErrorMessage("Init - memory allocation failed");
-		return;
-	}
-	SetText("");
 	SetDim(0,0);
+	
 }
 
 
 /// @brief initialization of the object as a copy of an object 
 /// @param r reference to the object that should be copied 
 void Rectangle::Init(const Rectangle &r) {
-	
 	Init();
-	SetDim(r.width,r.height); 
-	SetText(r.text);
+	SetDim(r.width,r.height);
 }
 
 /// @brief total reset of the object  
 void Rectangle::Reset() {
 	
-	if (text != NULL) 
-		delete text;
-	text = NULL;
 	SetDim(0,0);
 	
 }
@@ -195,28 +204,13 @@ void Rectangle::Dump() {
 	cout << endl;
 	
 	cout << "Width = " << width << endl;
-	cout << "Heigth = " << height << endl; 
-	cout << "Text = " << text << endl;
-	printf("Text ptr %x\n",text);
+	cout << "Heigth = " << height << endl;
 	
 	
 	cout << endl;
 
 }
 
-void Rectangle::SetText(const char* string) {
-
-	int size = strlen(string);
-	memcpy(text,string,size); 
-	text[size]='\0';
-	
-}
-
-void Rectangle::GetText(char* string) {
-	
-	memcpy(string,text,strlen(text));
-	
-}
 
 
 

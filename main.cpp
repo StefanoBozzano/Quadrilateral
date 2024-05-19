@@ -1,76 +1,43 @@
-#include<iostream>
 
-#include "CRectangle.h"
-#include "CRhombus.h"
+#include "derivata.h"
 
 int main() {
 
-	Quadrilateral *A, *B, *C; 
-	float s1,s2,s3,s4;
+	Base  *B; 
+	Derivata *D;
+	Base b1;
+	Derivata d1;
 	
-	Rectangle rectA(10,5);
-	Rectangle rectB(3,7);
-	Rhombus rhoC(2,1);
+	B = &d1;
 	
-	A = &rectA;
-	B = &rectB;
-	C = &rhoC;
+//	B= &b1;
+
+	B->fu1(); //early binding compilazione
+
+	B->fu2(); //late binding  run time 
+
+	B->fu3(); //late binding 
+
+	B->fu4(); //late binding 
+
+//	B->fu5();
+
+//	B->fu4(0);
 
 	cout << endl;
-	cout << "**** quadrilateral A ****" << endl;
-	A->Dump(); 
-	cout << "**** ***** ****" << endl;
-	cout << "**** quadrilateral B ****" << endl;
-	B->Dump(); 
-	cout << "**** ***** ****" << endl;
-	cout << "**** quadrilateral C ****" << endl;
-	C->Dump(); 
-	cout << "**** ***** ****" << endl;
 	
-	cout << endl;
-	cout << "**** rectangle A ****" << endl;
-	rectA.Dump(); 
-	cout << "**** ***** ****" << endl;
-	cout << "**** rectangle B ****" << endl;
-	rectB.Dump(); 
-	cout << "**** ***** ****" << endl;
-	cout << "**** rectangle C ****" << endl;
-	rhoC.Dump(); 
-	cout << "**** ***** ****" << endl;
-	
-	rectA = rectB; 
-	
-	cout << endl;
-	cout << "**** quadrilateral A ****" << endl;
-	A->Dump(); 
-	cout << "**** ***** ****" << endl;
-	cout << "**** quadrilateral B ****" << endl;
-	B->Dump(); 
-	cout << "**** ***** ****" << endl;
-	
-	rectB.SetWidth(12);
-	cout << endl;
-	cout << "**** quadrilateral A ****" << endl;
-	A->Dump(); 
-	cout << "**** ***** ****" << endl;
-	cout << "**** quadrilateral B ****" << endl;
-	B->Dump(); 
-	cout << "**** ***** ****" << endl;
-	
-	B->GetSides(s1,s2,s3,s4);
-	cout << "rectangle B - sides:" << s1 << " " << s2 << " "<< s3 << " "<< s4 << endl; 
-	
-	C->GetSides(s1,s2,s3,s4);
-	cout << "rhombus C - sides:" << s1 << " " << s2 << " "<< s3 << " "<< s4 << endl;
-	
-	rhoC.SetDiagL(8);
-	C->GetSides(s1,s2,s3,s4);
-	cout << "rhombus C - sides:" << s1 << " " << s2 << " "<< s3 << " "<< s4 << endl;
 
-//	C->GetArea(); 
-	
-		
-	
-	return 0;
+	D = &d1;
 
+	D->fu1();   
+
+	D->fu2();  
+
+	D->fu3();
+
+	D->fu4(4);
+
+	D->fu5();
+
+	
 }

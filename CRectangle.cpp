@@ -5,7 +5,7 @@
 ///
 
 #include<iostream> 
-#include <string.h>
+#include <cstring>
 #include "CRectangle.h" 
 using namespace std;
 
@@ -58,14 +58,14 @@ Rectangle::Rectangle(const Rectangle &r) {
 
 /// @brief default initialization of the object
 void Rectangle::Init() {
-	Reset();
+
 	text = new char [1000]; 
 	if (text == NULL) {
 		ErrorMessage("Init - memory allocation failed");
 		return;
 	}
 	SetText("");
-	
+	SetDim(0,0);
 }
 
 
@@ -73,10 +73,8 @@ void Rectangle::Init() {
 /// @param r reference to the object that should be copied 
 void Rectangle::Init(const Rectangle &r) {
 	
-	
-	Reset();
+	Init();
 	SetDim(r.width,r.height); 
-	
 	SetText(r.text);
 }
 
@@ -206,15 +204,17 @@ void Rectangle::Dump() {
 
 }
 
-void Rectangle::SetText(char* string) {
+void Rectangle::SetText(const char* string) {
 
-	strcpy(text,string); 
+	int size = strlen(string);
+	memcpy(text,string,size); 
+	text[size]='\0';
 	
 }
 
 void Rectangle::GetText(char* string) {
 	
-	strcpy(string,text);
+	memcpy(string,text,strlen(text));
 	
 }
 

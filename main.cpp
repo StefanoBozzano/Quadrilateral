@@ -1,5 +1,5 @@
 #include<iostream> 
-#include<string.h>
+#include<cstring>
 
 using namespace std;
 
@@ -20,9 +20,10 @@ void ProcessRectangle(Rectangle r) {
 void ProcessRectangle(Rectangle &r) {
 	
 	char msg1[1000];
-	strcpy(msg1,"scherzone");
+	int size = strlen("scherzone");
+	memcpy(msg1,"scherzone",size); 
+	msg1[size]='\0';
 	
-	char tmps[1000]; 
 	cout << endl;
 	cout << "######## Process ###########" << endl;
 	
@@ -32,8 +33,6 @@ void ProcessRectangle(Rectangle &r) {
 	r.SetWidth(h); 
 	r.SetHeight(w);
 	
-	r.GetText(tmps);
-	cout << "Process: " << tmps << endl;  
 
 	r.SetText(msg1);
 	
@@ -42,14 +41,18 @@ void ProcessRectangle(Rectangle &r) {
 	cout << "######### ######### ##########" << endl;
 }
 
+
+
 int main() {
 
-	char tmps[1000];
 	Rectangle rectA(10,5);
 	Rectangle rectB(3,7);
 	
 	char msg1[1000];
-	strcpy(msg1,"prova");
+	int size = strlen("prova");
+	memcpy(msg1,"prova",size); 
+	msg1[size]='\0';
+
 	rectA.SetText(msg1);
 		
 	cout << endl;
@@ -64,7 +67,6 @@ int main() {
 
 	
 	ProcessRectangle(rectA); 
-	
 	
 	cout << endl;
 	cout << "****** rectangle A dump ******" << endl;

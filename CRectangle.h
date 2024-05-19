@@ -48,7 +48,7 @@ public:
 	void SetWidth(float w);
 	void SetDim(float w, float h); 
 	
-	void SetText(char* string);
+	void SetText(const char* string);
 		
 	void GetDim(float &w, float &h);
 	float GetHeight();

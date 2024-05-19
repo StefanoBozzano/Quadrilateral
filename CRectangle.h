@@ -10,17 +10,17 @@
 
 #include<iostream>
 
+#include "CQuadrilateral.h"
 
 using namespace std;
 
 /// @class Rectangle
 /// @brief to manage an object with the shape of a rectangle
-class Rectangle 
+class Rectangle : public Quadrilateral
 {
 protected:
 	float height;
 	float width;
-	
 
 public:
 	
@@ -51,12 +51,12 @@ public:
 	/// @{
 	void SetHeight(float h);
 	void SetWidth(float w);
-	void SetDim(float w, float h); 
-		
+	void SetDim(float w, float h);
+	
 	void GetDim(float &w, float &h);
 	float GetHeight();
 	float GetWidth(); 
-	float GetPerimeter(); 
+	
 	float GetArea();
 	/// @}
 	

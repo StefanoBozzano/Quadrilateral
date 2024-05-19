@@ -157,7 +157,7 @@ float Rhombus::GetSide() {
 /// @param dS shorter diagonal
 void Rhombus::SetDim(float dL, float dS) {
 
-	int side = 0;
+	float side = 0;
 	
 	diagL = dL;
 	diagS = dS;  
@@ -181,7 +181,7 @@ void Rhombus::GetDim(float &dL, float &dS) {
 
 /// @brief computes the area of the object
 /// @return the area 
-float Rhombus::Area() {
+float Rhombus::GetArea() {
 	
 	return (diagL*diagS/2.);
 }

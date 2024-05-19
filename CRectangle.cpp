@@ -148,6 +148,7 @@ void Rectangle::SetDim(float w, float h) {
 
 	width = w;
 	height = h;  
+	Quadrilateral::SetSides(w,h,w,h);
 	
 	return;
 }
@@ -168,13 +169,6 @@ void Rectangle::GetDim(float &w, float &h) {
 float Rectangle::GetArea() {
 	
 	return (width*height);
-}
-
-/// @brief computes the perimeter of the object
-/// @return the area 
-float Rectangle::GetPerimeter() {
-	
-	return (2*(width+height));
 }
 
 
@@ -206,6 +200,7 @@ void Rectangle::Dump() {
 	cout << "Width = " << width << endl;
 	cout << "Heigth = " << height << endl;
 	
+	Quadrilateral::Dump();
 	
 	cout << endl;
 

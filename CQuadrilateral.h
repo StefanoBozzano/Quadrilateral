@@ -20,9 +20,12 @@ protected:
 	float sides[4];
 	
 	void SetSides(float s1, float s2, float s3, float s4); 
-
+	
+	virtual float Area()=0; 
 
 public:
+
+	
 
 	/// @name CONSTRUCTORS/DESTRUCTOR
 	/// @{
@@ -47,6 +50,7 @@ public:
 			
 	/// @name GETTERS
 	/// @{
+	float GetArea();
 	float GetPerimeter();
 	void GetSides(float &s0, float &s1, float &s2, float &s3);
 	/// @}

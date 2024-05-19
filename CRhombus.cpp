@@ -181,8 +181,8 @@ void Rhombus::GetDim(float &dL, float &dS) {
 
 /// @brief computes the area of the object
 /// @return the area 
-float Rhombus::GetArea() {
-	
+float Rhombus::Area() {
+	cout << "Classe derivata" << endl;
 	return (diagL*diagS/2.);
 }
 
@@ -209,12 +209,13 @@ void Rhombus::WarningMessage(const char *string) {
 /// @brief for debugging: all about the object
 void Rhombus::Dump() {
 	cout << endl;
-	cout << "---Rhombus---" << endl; 
+	cout << "-------- Rhombus --------" << endl; 
 	cout << endl;
 	
 	cout << "Longer diagonal = " << diagL << endl;
 	cout << "Shorter diagonal = " << diagS << endl; 
-	cout << "Side = " << GetSide() << endl;
+	cout << "Side = " << GetSide() << endl; 
+	cout << "-------- ------------ --------" << endl; 
 	
 	Quadrilateral::Dump();
 	

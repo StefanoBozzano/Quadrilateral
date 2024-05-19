@@ -166,8 +166,8 @@ void Rectangle::GetDim(float &w, float &h) {
 
 /// @brief computes the area of the object
 /// @return the area 
-float Rectangle::GetArea() {
-	
+float Rectangle::Area() {
+	cout << "Classe derivata" << endl;
 	return (width*height);
 }
 
@@ -194,11 +194,12 @@ void Rectangle::WarningMessage(const char *string) {
 /// @brief for debugging: all about the object
 void Rectangle::Dump() {
 	cout << endl;
-	cout << "---Rectangle---" << endl; 
+	cout << "-------- Rectangle --------" << endl; 
 	cout << endl;
 	
 	cout << "Width = " << width << endl;
 	cout << "Heigth = " << height << endl;
+	cout << "-------- ------------ -----------" << endl;
 	
 	Quadrilateral::Dump();
 	

@@ -21,6 +21,11 @@ class Rectangle : public Quadrilateral
 protected:
 	float height;
 	float width;
+	
+	/// @name PURE VIRTUAL FUNCTIONS - IMPLEMENTATION
+	/// @{
+	float Area();
+	/// @}
 
 public:
 	
@@ -29,6 +34,8 @@ public:
 	Rectangle();
 	Rectangle(float w, float l);
 	Rectangle(const Rectangle &r);
+	
+	
 	
 	~Rectangle();
 	/// @}
@@ -56,8 +63,6 @@ public:
 	void GetDim(float &w, float &h);
 	float GetHeight();
 	float GetWidth(); 
-	
-	float GetArea();
 	/// @}
 	
 	

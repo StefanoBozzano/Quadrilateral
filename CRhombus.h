@@ -23,7 +23,14 @@ protected:
 	float diagL;
 	float diagS;
 	
+	/// @name PURE VIRTUAL FUNCTIONS - IMPLEMENTATION
+	/// @{
+	float Area();
+	/// @}
+
 public:
+	
+	
 	
 	/// @name CONSTRUCTORS/DESTRUCTOR
 	/// @{
@@ -58,8 +65,6 @@ public:
 	float GetDiagL();
 	float GetDiagS();
 	float GetSide();	
-	
-	float GetArea();
 	/// @}
 	
 	

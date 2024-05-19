@@ -5,7 +5,7 @@ Quadrilateral::Quadrilateral() {
 
 	cout << "Quadrilateral - constructor - default" << endl;
 
-	Reset();
+	Init();
 
 } 
 
@@ -84,6 +84,13 @@ void Quadrilateral::Reset() {
 	
 }
 
+/// @brief get the area of the object
+/// @return area 
+float Quadrilateral::GetArea() {
+	
+	return this->Area();
+
+}
 
 /// @brief get the perimeter of the object
 /// @return perimeter 
@@ -130,9 +137,11 @@ void Quadrilateral::WarningMessage(const char *string) {
 void Quadrilateral::Dump() {
 	
 	cout << endl;
+	cout << "-------- Quadrilateral -----------" << endl;
 	cout << "Sides = " << sides[0] << "; " << sides[1] << "; " << sides[2] << "; " << sides[3] << "; " << endl;
 	cout << "Perimeter = " << GetPerimeter() << endl;
-	cout << endl;
+	cout << "Area = " << GetArea() << endl;
+	cout << "-------- -------------- -----------" << endl;
 
 }
 
